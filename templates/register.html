@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Register</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label>Username:</label>
+            <input type="text" name="username" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label>Password:</label>
+            <input type="password" name="password" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label>Confirm Password:</label>
+            <input type="password" name="Confirm Password" required class="form=control">
+
+        </div>
+        <div class="mb-3">
+            <label>Email:</label>
+            <input type="email" name="Email" required class="form=control">
+        </div>
+        <div class='mb-3'>
+            <label>Phone number:</label>
+            <input type="number" name="Phone number" required class="form=control">
+        </div>
+        <div class="mb-3">
+            <label>Name of College/University:</label>
+            <input type="text" name="Name of College/University" required class="form=control">
+        </div>
+        <div class="mb-3">
+            <label>Course Studying:</label>
+            <input type="text" name="Course Studying" required class="form=control">
+        </div>
+        <div class="mb-3">
+            <label>Year Studying:</label>
+            <select name="year">
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="Final Year">Final Year</option>
+            </select>            
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+{% endblock %}

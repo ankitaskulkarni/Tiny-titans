@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Request a Service</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label>Service you want to request:</label>
+            
+        </div>
+        <div class="mb-3">
+            <select name="category" class="form-select">
+                <option value="Alumni Networking">Alumni Networking</option>
+<option value="Arts and Crafts">Arts and Crafts</option>
+<option value="Career Coaching">Career Coaching</option>
+<option value="Coding Competitions">Coding Competitions</option>
+<option value="Community Engagement">Community Engagement</option>
+<option value="Entrepreneurship Bootcamps">Entrepreneurship Bootcamps</option>
+<option value="Event Planning">Event Planning</option>
+<option value="Event Volunteering">Event Volunteering</option>
+<option value="Exam Preparation Assistance">Exam Preparation Assistance</option>
+<option value="Fitness Training">Fitness Training</option>
+<option value="Hackathon Teaming">Hackathon Teaming</option>
+<option value="Innovation Workshops">Innovation Workshops</option>
+<option value="Internship and Job Referrals">Internship and Job Referrals</option>
+<option value="Language Teaching">Language Teaching</option>
+<option value="Mental Health Support">Mental Health Support</option>
+<option value="Networking & Collaboration">Networking & Collaboration</option>
+<option value="Notes Exchange">Notes Exchange</option>
+<option value="Personality Development">Personality Development</option>
+<option value="Photography">Photography</option>
+<option value="Project Mentorship">Project Mentorship</option>
+<option value="Public Speaking Training">Public Speaking Training</option>
+<option value="Resume Help">Resume Help</option>
+<option value="Skill Development">Skill Development (rides)</option>
+<option value="Social Responsibility Initiatives">Social Responsibility Initiatives</option>
+<option value="Subject Tutoring">Subject Tutoring</option>
+<option value="Technical Q&A Forums">Technical Q&A Forums</option>
+<option value="Technology Help">Technology Help</option>
+
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input type="text" id="service" name="service" class="form-control" placeholder="Discription" required>
+        </div>
+        <button type="submit" class="btn btn-warning">Submit</button>
+    </form>
+{% endblock %}
