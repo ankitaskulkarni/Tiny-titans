@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .hero {
+        height: 75vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #000;
+    }
+    .hero h1 {
+        font-size: 3.2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+    }
+    .btn-cta {
+        background-color:rgb(9, 11, 14);
+        color: white;
+        padding: 12px 40px;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border: none;
+        transition: all 0.3s ease;
+    }
+    .btn-cta:hover {
+        background-color: #0056b3;
+    }
+</style>
+<div class="hero">
+    <h1>Welcome to TimeBanking</h1>
+    <p>Where students exchange skills, time, and grow together.</p>
+    <a href="/register" class="btn btn-cta">Get Started</a>
+    <p class="mt-3" style="color: black;">
+        “Help one, learn one, grow together.”
+    </p>
+</div>
+<div class="text-center py-5 mt-5">
+    <h2 class="mb-4">Platform Impact</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <h1 class="counter" data-target="200">0</h1>
+            <p>Registered Students</p>
+        </div>
+        <div class="col-md-3">
+            <h1 class="counter" data-target="120">0</h1>
+            <p>Services Offered</p>
+        </div>
+        <div class="col-md-3">
+            <h1 class="counter" data-target="80">0</h1>
+            <p>Hours Exchanged</p>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center my-5">
+    <div class="col-md-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055644.png" width="70" />
+        <h4 class="mt-3">Offer Your Skills</h4>
+        <p>From coding to training — help your peers and earn hours.</p>
+    </div>
+    <div class="col-md-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/3417/3417970.png" width="70" />
+        <h4 class="mt-3">Request Help</h4>
+        <p>Need assistance with studies or projects? Request and receive!</p>
+    </div>
+    <div class="col-md-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/2620/2620577.png" width="70" />
+        <h4 class="mt-3">Earn & Exchange</h4>
+        <p>Earn time credits and use them to learn from others.</p>
+    </div>
+</div>
+<style>
+    .chat-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color:rgb(100, 104, 109);
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        border-radius: 50px;
+        font-size: 16px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        cursor: pointer;
+        z-index: 999;
+    }
+
+    .chat-btn:hover {
+        background-color:rgb(180, 183, 185);
+    }
+</style>
+
+<button class="chat-btn" onclick="alert('Coming soon: Student Help Chat 💬')">
+    💬 Chat / Help
+</button>
+
+
+
+
+{% endblock %}

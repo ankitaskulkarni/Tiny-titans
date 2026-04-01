@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Available Services</h2>
+
+    <ul class="list-group">
+        {% for service in services %}
+            <li class="list-group-item">
+                <strong>{{ service.type.title() }}</strong> - {{ service.service_name }}{% if service.category %} ({{ service.category }}){% endif %} (by {{ service.user.username }})
+            </li>
+        {% else %}
+            <li>No services available.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
