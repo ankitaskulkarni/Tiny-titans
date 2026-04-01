@@ -1,13 +1,30 @@
-# app.py
-
+import os
+import shutil
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # Needed for session handling
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///timebank.db'
+app.secret_key = os.environ.get('SECRET_KEY', 'supersecretkey') 
+
+# Database Configuration for Vercel (read-only filesystem workaround)
+basedir = os.path.abspath(os.path.dirname(__file__))
+bundled_db_path = os.path.join(basedir, 'timebank.db')
+
+if os.environ.get('VERCEL'):
+    # Use /tmp for writable SQLite database
+    db_path = '/tmp/timebank.db'
+    if not os.path.exists(db_path) and os.path.exists(bundled_db_path):
+        shutil.copy(bundled_db_path, db_path)
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///timebank.db'
+
 db = SQLAlchemy(app)
+
+# Initialize Database Tables
+with app.app_context():
+    db.create_all()
 
 # Database Models
 class User(db.Model):
@@ -148,6 +165,4 @@ def logout():
 
 # Run the app
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=True)
